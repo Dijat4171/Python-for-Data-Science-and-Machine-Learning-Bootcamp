@@ -36,3 +36,40 @@ def caught_speeding(speed, is_birthday):
         return 'Small Ticket'
     else:
         return 'No Ticket'
+
+#I decided to change a little bit of the problem with real life speeding in Indonesia.
+#From website: https://indonesiabaik.id/infografis/berapa-batas-kecepatan-berkendara-di-jalan, there are 5 terms speeding with different locations. Also, I want change the birthday with driving license, vehicle registration certificate, and vehicle ownership documents.
+#If someone speeding more than rules that have been determined, they will caught speeding and given charge Rp 500.000. Otherwise, if someone speeding less than rules, they won't get ticket. If they can't show their documents that I already mention above either they speeding or not, they will charge Rp 250.000 based on laws (Pasal 106 ayat (5) huruf b UU No.22/2009 tentang LLAJ).
+
+def caught_speeding(speed, location, is_documents):
+    if is_documents:
+        Charge_1 = 0
+    else:
+        Charge_1 = 250
+
+    if location == 'residential areas':
+        if speed > 30:
+            Charge_2 = 500
+        else:
+            Charge_2 = 0
+    elif location == 'urban areas':
+        if speed > 50:
+            Charge_2 = 500
+        else:
+            Charge_2 = 500
+    elif location == 'free flow conditions':
+        if speed > 60:
+            Charge_2 = 500
+        else:
+            pass
+    elif location == 'inter-city roads':
+        if speed > 80:
+            Charge_2 = 500
+        else:
+            Charge_2 = 500
+    elif location == 'freeways':
+        if speed > 100:
+            Charge_2 = 500
+        else:
+            Charge_2 = 500
+    print('Rp ' + str(Charge_1 + Charge_2) + '.000')
