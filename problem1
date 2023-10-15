@@ -1,0 +1,38 @@
+#In Python for Data Science and Machine Learning Bootcamp course, there's final exercise about ticket
+#You are driving a little too fast, and a police officer stops you. Write a function to return one of 3 possible results: "No ticket", "Small ticket", or "Big Ticket". If your speed is 60 or less, the result is "No Ticket". If speed is between 61 and 80 inclusive, the result is "Small Ticket". If speed is 81 or more, the result is "Big Ticket". Unless it is your birthday (encoded as a boolean value in the parameters of the function) -- on your birthday, your speed can be 5 higher in all cases.
+#Before I look the solution of the problem, I tried to solve it with my own way.
+
+#This is my solution
+def caught_speeding(speed, is_birthday): 
+    a = speed
+    b = is_birthday
+    if b == True:
+        c = a - 5
+        if c <= 60:
+            print("No Ticket")
+        elif c > 60 and c <= 80:
+            print("Small Ticket")
+        else:
+            print("Big Ticket")
+    else:
+        if a <= 60:
+            print("No Ticket")
+        elif a > 60 and a <= 80:
+            print("Small Ticket")
+        else:
+            print("Big Ticket")
+
+#Here is the solution by the creator of the course
+def caught_speeding(speed, is_birthday):
+    
+    if is_birthday:
+        speeding = speed - 5
+    else:
+        speeding = speed
+    
+    if speeding > 80:
+        return 'Big Ticket'
+    elif speeding > 60:
+        return 'Small Ticket'
+    else:
+        return 'No Ticket'
